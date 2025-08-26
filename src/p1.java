@@ -4,6 +4,19 @@ import java.util.Scanner;
  * Problem 1 - Sorting (ascending)
  * Approach: Insertion Sort
  */
+
+/** Complexity Analysis:
+  - Idea: Take each number and move it left until it is in the correct place.
+  - Best case: O(n) → list already sorted, few moves needed.
+  - Average case: O(n^2) → some numbers need to move several times.
+  - Worst case: O(n^2) → list in reverse order, every number moves a lot.
+  - Space: O(1) → uses the same array, only a few extra variables.
+  - Stable: Yes → equal numbers stay in the same order.
+  - Good for: small or almost sorted lists.
+  - Not good for: very large or very mixed lists (better to use faster sorts).
+*/
+
+
 public class P1 {
 
     // Function to sort array in ascending order
