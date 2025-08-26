@@ -1,5 +1,26 @@
-public class P5 {
+/*
+ * ============================
+ * Bonus: Space-Time Complexity
+ * ============================
+ *
+ * Time Complexity:
+ * - The program checks every item in list1 against every item in list2.
+ * - This means if both lists have 6 items, it may do up to 36 comparisons.
+ * - So, as the lists get longer, the time it takes grows quickly.
+ * - This is called O(n × m) time.
+ *
+ * Space Complexity:
+ * - The program makes a new list to store the result (the unique values).
+ * - If the two lists don’t share any numbers, it stores everything from both.
+ * - So, the memory used depends on how big the lists are.
+ * - This is called O(n + m) space.
+ *
+ * Summary:
+ * Time = O(n × m)
+ * Space = O(n + m)
+ */
 
+public class P5 {
     // Function to check if a number is in a list
     public static boolean isInList(int[] list, int size, int number) {
         for (int i = 0; i < size; i++) {
