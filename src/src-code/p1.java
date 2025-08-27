@@ -8,7 +8,6 @@ import java.util.Scanner;
  * Java was chosen because this problem involves array manipulation and user input handling.
  * Java provides strong built-in support for array processing, clear loop constructs,
  * and robust input mechanisms like Scanner, which make implementing insertion sort straightforward.
- */
 
 /** Complexity Analysis:
   - Idea: Take each number and move it left until it is in the correct place.
