@@ -98,5 +98,5 @@ Storage is per‑browser and per‑device. There is no cloud sync.
 
 ## 8) Credits / License
 
-Made by **Yamin Nabhn**.  
+Made by **Yamin Nabhan**.  
 You can adapt or extend this project for personal or educational use.
