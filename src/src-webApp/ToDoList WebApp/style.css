@@ -1,0 +1,331 @@
+/* ===== Theme variables (colors, radii, shadows) ===== */
+:root{
+  --bg:#f6f7f8;
+  --panel:#ffffff;
+  --ink:#0a0a0a;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --accent:#0f172a;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --radius:16px;
+  --r-sm:12px;
+}
+
+/* ===== Base + typography ===== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 1100px at -10% -10%, #eef2ff 0, transparent 55%),
+    radial-gradient(900px 900px at 120% -20%, #f1f5f9 0, transparent 45%),
+    var(--bg);
+}
+
+/* ===== App shell layout (sidebar • main • drawer) ===== */
+.shell{min-height:100vh; display:grid; grid-template-columns: 280px 1fr 360px; gap:20px; padding:22px}
+
+/* ===== Sidebar (container + common bits) ===== */
+.sidebar{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:14px; display:flex; flex-direction:column; gap:12px;
+}
+.logo{margin:0; font-size:1.15rem}
+.iconbtn{border:1px solid var(--line); background:#fff; border-radius:10px; padding:8px 10px; cursor:pointer}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+
+/* Sidebar search */
+.search input{width:100%; border:1px solid var(--line); border-radius:12px; padding:10px 12px; background:#fff; outline:none}
+.search input:focus{box-shadow:0 0 0 4px #0000000e; border-color:#cbd5e1}
+
+/* Sidebar headings + nav links */
+.sb-title{margin:.25rem 0 .35rem; color:var(--muted); font-weight:700; font-size:.85rem; letter-spacing:.04em}
+.nav{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px}
+.navlink,.nav button.navlink{display:flex; align-items:center; justify-content:space-between; gap:8px; text-decoration:none; color:inherit; border:1px solid var(--line); border-radius:12px; background:#fff; padding:10px 12px; cursor:pointer}
+.navlink:hover{background:#f7f7f7}
+.navlink.active{outline:2px solid #00000012; background:#fafafa}
+.pill{font-size:.75rem; padding:2px 8px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--muted)}
+
+/* Sidebar footer (logo holder pinned at bottom) */
+.sb-foot{
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sidebar logo look/size */
+.sb-logo{
+  max-width: 140px;
+  height: auto;
+  opacity: .8;
+  filter: grayscale(100%);
+}
+.sb-logo:hover{
+  opacity: 1;
+  filter: none;
+}
+
+/* Small sidebar buttons */
+.tiny{font-size:.85rem; border:1px solid var(--line); background:#fff; border-radius:8px; padding:6px 10px; cursor:pointer}
+.tiny.danger{color:#dc2626; border-color:#fecaca; background:#fff5f5}
+
+/* ===== Main content shell ===== */
+.content{display:flex; flex-direction:column; gap:14px}
+
+/* Topbar wrapper */
+.topbar{
+  display:flex; align-items:end; justify-content:space-between; gap:16px;
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:16px 18px;
+}
+
+/* Headings and small text */
+h1{margin:0; font-size:clamp(22px,4vw,36px); letter-spacing:.2px}
+.muted{margin:.2rem 0 0; color:var(--muted)}
+.top-actions{display:flex; align-items:center; gap:8px}
+
+/* ===== Buttons ===== */
+.btn{border:1px solid var(--line); background:#fff; border-radius:12px; padding:10px 14px; font-weight:800; cursor:pointer; transition:transform .04s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease}
+.btn:hover{box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:#111; color:#fff; border-color:#111}
+.btn.ghost{background:#fff}
+.btn.danger{background:#fff5f5; border-color:#fecaca; color:#b91c1c}
+
+/* Brand button (teal) */
+.btn.brand{
+  background:#1c717b;
+  border-color:#1c717b;
+  color:#fff;
+}
+.btn.brand:hover{
+  box-shadow:0 8px 22px rgba(28,113,123,.35);
+}
+.btn.brand:focus-visible{
+  outline:3px solid rgba(28,113,123,.35);
+  outline-offset:2px;
+}
+.btn.brand:active{ transform:translateY(1px); }
+
+/* ===== Cards and sections ===== */
+.card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow)}
+.space{padding:14px}
+.section-title{margin:0 0 10px}
+
+/* ===== Drawer form layout ===== */
+.drawer{padding:14px}
+.drawer-head{margin-bottom:6px}
+.drawer-form{display:flex; flex-direction:column; gap:10px}
+
+/* Drawer row layout (Priority | Due | Time) */
+.row{
+  display:grid;
+  grid-template-columns: 1fr 1.32fr 1fr;
+  gap:10px;
+}
+
+/* Form fields and inputs */
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width:0;
+}
+label{font-size:.9rem; color:var(--muted)}
+.req{color:#dc2626}
+input[type="text"], textarea, select, input[type="date"], input[type="time"]{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 12px;
+  background:#fff;
+  outline:none;
+  width:100%;
+  max-width:100%;
+}
+textarea{min-height:56px; resize:vertical}
+input:focus, textarea:focus, select:focus{border-color:#cbd5e1; box-shadow:0 0 0 4px #0000000e}
+.checkline{display:flex; align-items:center; gap:8px; font-size:.95rem; color:#111}
+
+/* Drawer action buttons centered */
+.form-actions{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+}
+
+/* ===== Lists / items ===== */
+.list{display:grid; gap:10px}
+.list-toolbar .hint{color:var(--muted); font-weight:600}
+.empty{border:2px dashed var(--line); border-radius:var(--radius); padding:26px; text-align:center; color:var(--muted); background:#fff}
+
+/* Task card layout */
+.item{display:grid; grid-template-columns:auto 1fr auto; gap:12px; align-items:start; border:1px solid var(--line); background:#fff; border-radius:var(--r-sm); padding:12px; box-shadow:var(--shadow); animation:fade .2s ease both}
+@keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+.checkbox{width:20px; height:20px; margin-top:3px; cursor:pointer; accent-color:#16a34a}
+.title{margin:0; font-weight:800; line-height:1.35}
+.desc{margin:6px 0 0; color:var(--muted)}
+.meta{margin-top:8px; display:flex; gap:10px; flex-wrap:wrap}
+.badge{font-size:.75rem; font-weight:800; padding:2px 8px; border-radius:999px; border:1px solid var(--line); background:#fafafa; color:#737373}
+
+/* Priority badges */
+.priority-high{ background:#fee2e2; border-color:#fca5a5; color:#b91c1c; }
+.priority-medium{ background:#fff7ed; border-color:#fed7aa; color:#9a3412; }
+.priority-low{ background:#ecfdf5; border-color:#a7f3d0; color:#065f46; }
+
+/* Completed state */
+.status-done .title{ text-decoration:line-through; color:#6b7280 }
+.status-done .desc{ color:#9ca3af }
+
+/* Item controls (edit/delete) */
+.controls{display:flex; gap:8px}
+.icon{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:10px;
+  width:36px; height:36px;
+  padding:0;
+  display:inline-flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  transition:background .15s ease, box-shadow .15s ease;
+}
+.icon:hover{ background:#f6f6f6; box-shadow:0 8px 22px rgba(0,0,0,.06) }
+.icon svg{
+  width:18px; height:18px;
+  stroke:#64748b; stroke-width:1.8; fill:none;
+}
+.icon.edit svg{ stroke:#0f172a; }
+.icon.del  svg{ stroke:#dc2626; }
+
+/* ===== Simple grids ===== */
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.col-span-2{grid-column:1 / -1}
+
+/* ===== Calendar day view ===== */
+.calendar{display:grid; grid-template-columns:90px 1fr; gap:0; overflow:hidden}
+.calendar .hours{border-right:1px solid var(--line); padding:12px}
+.calendar .hour{height:56px; border-bottom:1px dashed #f0f0f0; font-size:.85rem; color:#94a3b8; display:flex; align-items:flex-start}
+.calendar .tracks{position:relative; padding:12px}
+
+/* Calendar task bars */
+.calendar .bar{
+  position:absolute;
+  left:12px; right:12px;
+  height:44px;
+  border-radius:12px;
+  display:flex; align-items:center;
+  padding:8px 12px;
+  font-weight:800;
+  color:#0a0a0a;
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  cursor:pointer;
+}
+.calendar .bar:hover{ transform: translateY(-1px); box-shadow: 0 12px 26px rgba(0,0,0,.10); }
+.calendar .bar .badge{ margin-left:8px }
+
+/* ===== Sticky wall notes ===== */
+.sticky-wall{padding:18px}
+.note{border-radius:16px; padding:16px; box-shadow:var(--shadow); border:1px solid var(--line)}
+.note.yellow{background:#fff7cc}
+.note.blue{background:#eaf5ff}
+.note.pink{background:#ffe7ea}
+.note.gray{background:#f3f4f6}
+.sticky-wall .note { border-radius: 1; }
+
+/* ===== Responsive tweaks ===== */
+@media (max-width:1200px){ .shell{grid-template-columns: 260px 1fr 320px} }
+@media (max-width:1040px){ .shell{grid-template-columns: 260px 1fr} .drawer{display:none} }
+@media (max-width:760px){
+  .shell{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+}
+
+/* ===== Sidebar reopen FAB (only when sidebar hidden) ===== */
+.sidebar-fab{
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  z-index: 1000;
+  display: none;
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:10px;
+  padding:8px 10px;
+  cursor:pointer;
+  box-shadow: var(--shadow);
+}
+body.sidebar-hidden .sidebar-fab{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Sidebar hide behavior ===== */
+body.sidebar-hidden .sidebar{ display:none; }
+body.sidebar-hidden .shell{ grid-template-columns: 1fr 360px; }
+@media (max-width:1040px){
+  body.sidebar-hidden .shell{ grid-template-columns: 1fr; }
+}
+
+/* ===== Sidebar header & icons ===== */
+.sb-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+.nav-main{ display:flex; align-items:center; gap:10px; }
+.icon-left{
+  width:18px; height:18px; flex:0 0 auto;
+  stroke:#64748b; stroke-width:1.8; fill:none;
+}
+.navlink:hover .icon-left,
+.navlink.active .icon-left{ stroke:#111; }
+
+/* ===== Search icon positioning ===== */
+.search{ position:relative; }
+.search .search-icon{
+  position:absolute; left:12px; top:50%; transform:translateY(-50%);
+  width:16px; height:16px; stroke:#94a3b8; stroke-width:1.8; fill:none; pointer-events:none;
+}
+.search input{ padding-left:36px; }
+
+/* ===== Edit/Delete states (subtle) ===== */
+.icon.edit{ color:#111; }
+.icon.edit:hover{ background:#f7f7f7; }
+.icon.del{ color:#b91c1c; border-color:#fca5a5; }
+.icon.del:hover{ background:#fee2e2; border-color:#f87171; }
+.icon.del:focus-visible{ outline:3px solid #fecaca; outline-offset:2px; }
+
+/* ===== Today header: keep H1, greeting, date stacked left ===== */
+.topbar .title-row{
+  display:block;
+  margin-bottom: 2px;
+}
+
+/* Minimal greeting style (lighter weight, no chip) */
+.greet-pill{
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Date text just under greeting */
+#pageSub{
+  margin: .25rem 0 0;
+  font-size: .95rem;
+  color: var(--muted);
+}
