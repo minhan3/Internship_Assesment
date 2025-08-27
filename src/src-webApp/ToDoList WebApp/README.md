@@ -45,23 +45,24 @@ Storage is per‑browser and per‑device. There is no cloud sync.
 
 ## 4) Features
 
-- **Add / Edit / Delete / Complete** tasks.
-- **Search** (matches title + description, live as you type).
-- **Priority badges** (High / Medium / Low).
-- **Counts** in the sidebar (Today, Upcoming, All, High, Done, Sticky).
-- **Sticky Wall**: show selected tasks as colorful notes.
-- **Calendar – Day view**:
-  - Each hour row grows to fit all tasks at that hour (stacked vertically, no overlap).
-  - Visible time window adapts to earliest & latest hours with tasks (e.g., a 19:00 task extends the view).
-  - Pastel color per task (stable from its ID). Clicking a bar opens the edit drawer.
-- **Today page**:
+- Add / Edit / Delete / Complete** tasks.
+- Search (matches title + description, live as you type).
+- Priority badges** (High / Medium / Low).
+- Counts in the sidebar (Today, Upcoming, All, High, Done, Sticky).
+- Sidebar:
+  - Hide/Show with the top‑left ☰ button; a floating **☰ FAB** appears when hidden.
+  - Active nav highlighting follows the current page.
+
+- Today page:
   - Shows tasks due **today** *and* tasks **without a date**.
   - Sorting: **not‑done first** → **higher priority** → **nearer due date** → **most recent**.
   - Minimal greeting (with Salam) + current date/time.
-- **Upcoming page**: buckets for **Today**, **Tomorrow**, **This Week**, and **Next Month**.
-- **Sidebar**:
-  - Hide/Show with the top‑left ☰ button; a floating **☰ FAB** appears when hidden.
-  - Active nav highlighting follows the current page.
+- Upcoming page: buckets for **Today**, **Tomorrow**, **This Week**, and **Next Month**.
+- Calendar – Day view:
+  - Each hour row grows to fit all tasks at that hour (stacked vertically, no overlap).
+  - Visible time window adapts to earliest & latest hours with tasks (e.g., a 19:00 task extends the view).
+  - Pastel color per task (stable from its ID). Clicking a bar opens the edit drawer.
+- Sticky Wall: show selected tasks as colorful notes.
 
 ---
 
