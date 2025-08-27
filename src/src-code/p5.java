@@ -1,8 +1,14 @@
 /*
- * ============================
- * Bonus: Space-Time Complexity
- * ============================
+ * Problem 5 - Symmetric Difference Between Two Lists
  *
+ * Language Justification:
+ * Java is chosen because it provides precise control over arrays and memory.
+ * This problem benefits from manual array handling to illustrate symmetric difference
+ * logic step-by-step without built-in set libraries. Java's syntax also encourages 
+ * clean separation of methods, such as checking for duplicates and building result lists.
+ */
+
+/*
  * Time Complexity:
  * - The program checks every item in list1 against every item in list2.
  * - This means if both lists have 6 items, it may do up to 36 comparisons.
@@ -21,22 +27,23 @@
  */
 
 public class P5 {
-    // Function to check if a number is in a list
+
+    // Function to check if a number is already in the result list
     public static boolean isInList(int[] list, int size, int number) {
         for (int i = 0; i < size; i++) {
             if (list[i] == number) {
-                return true;
+                return true; // number already exists in result
             }
         }
-        return false;
+        return false; // number is not in result
     }
 
-    // Function to find symmetric difference
+    // Function to find symmetric difference between two lists
     public static int[] findSymmetricDifference(int[] list1, int[] list2) {
-        int[] temp = new int[list1.length + list2.length];
+        int[] temp = new int[list1.length + list2.length]; // temp array to hold result
         int count = 0;
 
-        // Step 1: Elements in list1 but not in list2
+        // Step 1: Add elements in list1 but not in list2
         for (int i = 0; i < list1.length; i++) {
             boolean found = false;
             for (int j = 0; j < list2.length; j++) {
@@ -45,13 +52,14 @@ public class P5 {
                     break;
                 }
             }
+            // Add only if not found in list2 and not already in result
             if (!found && !isInList(temp, count, list1[i])) {
                 temp[count] = list1[i];
                 count++;
             }
         }
 
-        // Step 2: Elements in list2 but not in list1
+        // Step 2: Add elements in list2 but not in list1
         for (int i = 0; i < list2.length; i++) {
             boolean found = false;
             for (int j = 0; j < list1.length; j++) {
@@ -60,13 +68,14 @@ public class P5 {
                     break;
                 }
             }
+            // Add only if not found in list1 and not already in result
             if (!found && !isInList(temp, count, list2[i])) {
                 temp[count] = list2[i];
                 count++;
             }
         }
 
-        // Copy result to final array
+        // Final step: copy result into a trimmed array of correct size
         int[] result = new int[count];
         for (int i = 0; i < count; i++) {
             result[i] = temp[i];
