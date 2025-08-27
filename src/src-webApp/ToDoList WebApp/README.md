@@ -39,7 +39,6 @@ All data is saved to your browser’s **localStorage** so it works offline and p
 - All tasks are stored in browser localStorage under key: **`todo.tasks.v3`**.
 
 ```
-
 Storage is per‑browser and per‑device. There is no cloud sync.
 
 ---
