@@ -1,4 +1,4 @@
-# To‑Do List Web Application (Just Do It)
+# To‑Do List JUST DO IT Web Application
 
 A simple, fast, client‑side task app. No backend and no build step — just open the HTML files in a browser.  
 All data is saved to your browser’s **localStorage** so it works offline and persists across reloads.
