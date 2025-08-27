@@ -95,5 +95,5 @@ All data is saved to your browser’s **localStorage** so it works offline and p
 
 ## 8) Credits / License
 
-Made by **Yamin Nabhn**.  
+Made by **Yamin Nabhan**.  
 You can adapt or extend this project for personal or educational use.
